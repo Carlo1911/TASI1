@@ -19,7 +19,7 @@ def tiene_palabra_importante(oracion, llave):
 
 def generar_oraciones(archivo):
     """
-    Función que traduce el texto a inglés
+    Función que procesa el texto
     """
     translator = Translator()
     contador = 0
@@ -54,4 +54,4 @@ def generar_oraciones(archivo):
                         if tiene_palabra_importante(oracion, llave):
                             writer.writerow([oracion, llave])
 
-generar_oraciones('Xiaomi.csv')
+generar_oraciones('Huawei.csv')
