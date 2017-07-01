@@ -58,4 +58,4 @@ def generar_oraciones(archivo):
                         if tiene_palabra_importante(text, llave):
                             writer.writerow([text, llave])
 
-generar_oraciones('OnePlus.csv')
+generar_oraciones('Samsung.csv')
