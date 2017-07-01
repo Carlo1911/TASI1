@@ -43,7 +43,7 @@ def valor_promedio_blob(lista):
     return [total_suma/num_elementos]
 
 def varder_anilyzer(archivo):
-    salida = open('Sentimientos_vader_'+archivo, "w")
+    salida = open('Sentimientos_SW_vader_'+archivo, "w")
     writer = csv.writer(salida, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     analyzer = SentimentIntensityAnalyzer()
     translator = Translator()
@@ -70,7 +70,7 @@ def varder_anilyzer(archivo):
         writer.writerow([key, caracteristicas[key][0], caracteristicas[key][1]])
 
 def blob_analyzer(archivo):
-    salida = open('Sentimientos_blob_'+archivo, "w")
+    salida = open('Sentimientos_SW_blob_'+archivo, "w")
     writer = csv.writer(salida, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     contador = 0
     with open(archivo, 'r') as entrada:
@@ -95,6 +95,6 @@ def blob_analyzer(archivo):
         caracteristicas[key] = valor_promedio_blob(value)
         writer.writerow([key, caracteristicas[key][0]])
 
-varder_anilyzer('Oraciones_OnePlus.csv')
-#blob_analyzer('Oraciones_OnePlus.csv')
+#varder_anilyzer('Oraciones_StopWords_OnePlus.csv')
+blob_analyzer('Oraciones_StopWords_OnePlus.csv')
 print(caracteristicas)

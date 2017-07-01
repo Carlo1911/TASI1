@@ -3,6 +3,8 @@ import csv
 import re
 import nltk
 from googletrans import Translator
+from nltk.corpus import stopwords
+
 
 lista_palabras = [
     "processor", "ram", "storage", "memory", "battery", "screen", "camera", "display"
@@ -23,7 +25,7 @@ def generar_oraciones(archivo):
     """
     translator = Translator()
     contador = 0
-    salida = open('Oraciones_'+archivo, "w")
+    salida = open('Oraciones_StopWords_'+archivo, "w")
     writer = csv.writer(salida, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     with open(archivo, 'r') as abierto:
         reader = csv.reader(abierto)
@@ -40,9 +42,10 @@ def generar_oraciones(archivo):
                         oracion = oracion.replace('\t', ' ')
                         oracion = oracion.replace('\r', ' ')
                         traducido = translator.translate(oracion)
+                        text = ' '.join([word for word in traducido.text.lower().split() if word not in (stopwords.words('english'))])
                         llave = []
-                        if tiene_palabra_importante(traducido.text, llave):
-                            writer.writerow([traducido.text, llave])
+                        if tiene_palabra_importante(text, llave):
+                            writer.writerow([text, llave])
             else:
                 for oracion in oraciones:
                     if len(oracion) > 1:
@@ -50,8 +53,9 @@ def generar_oraciones(archivo):
                         oracion = oracion.replace('\n', ' ')
                         oracion = oracion.replace('\t', ' ')
                         oracion = oracion.replace('\r', ' ')
+                        text = ' '.join([word for word in oracion.lower().split() if word not in (stopwords.words('english'))])
                         llave = []
-                        if tiene_palabra_importante(oracion, llave):
-                            writer.writerow([oracion, llave])
+                        if tiene_palabra_importante(text, llave):
+                            writer.writerow([text, llave])
 
 generar_oraciones('OnePlus.csv')
