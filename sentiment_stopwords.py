@@ -95,6 +95,6 @@ def blob_analyzer(archivo):
         caracteristicas[key] = valor_promedio_blob(value)
         writer.writerow([key, caracteristicas[key][0]])
 
-#varder_anilyzer('Oraciones_StopWords_Samsung.csv')
-blob_analyzer('Oraciones_StopWords_Samsung.csv')
+varder_anilyzer('Oraciones_StopWords_Samsung.csv')
+#blob_analyzer('Oraciones_StopWords_Samsung.csv')
 print(caracteristicas)
