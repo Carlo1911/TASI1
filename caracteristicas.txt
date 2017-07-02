@@ -1,4 +1,4 @@
-Características:
+﻿Características:
 Procesador
 Memoria RAM
 Memoria Interna
@@ -8,23 +8,8 @@ Cámara
 
 Celulares:
 -Sony Xperia XZ
-Samsung Galaxy S8
+-Samsung Galaxy S8
 -LG G6
 -Huawei P10
 -Xiaomi Mi6
-Oneplus 3T
-
-Fuentes:
-https://elandroidelibre.elespanol.com
-https://andro4all.com/
-http://omicrono.elespanol.com/
-https://www.xataka.com/
-https://hipertextual.com
-http://www.androidcentral.com
-https://www.cnet.com/news/
-http://www.phonearena.com
-http://www.gsmarena.com
-http://www.androidauthority.com
-http://www.techradar.com
-http://computerhoy.com
-https://www.movilzona.es
+-Oneplus 3T
